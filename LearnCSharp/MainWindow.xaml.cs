@@ -224,5 +224,18 @@ namespace LearnCSharp
             MessageBox.Show("В массиве {" + string.Join(", ", array) + "} " + counter + " элементов, кратных 3", "Результат");
         }
 
+        private void Button_Click_14(object sender, RoutedEventArgs e)
+        {
+            int[] array = Array.ConvertAll(System.IO.File.ReadAllLines(@"Arr.txt"), int.Parse);
+            int sum = 0;
+            foreach (int i in array)
+            {
+                if (i < array[4])
+                {
+                    sum += i;
+                }
+            }
+            MessageBox.Show("Сумма элементов массива {" + string.Join(", ", array) + "} меньших, чем 5 элемент этого массива, равна " + sum, "Результат");
+        }
     }
 }
