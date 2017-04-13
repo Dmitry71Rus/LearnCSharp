@@ -22,6 +22,7 @@
             <charting:ColumnSeries DependentValuePath="Value" IndependentValuePath="Key" ItemsSource="{Binding}" DataContext="{Binding}" Title="Массив" />
         </charting:Chart>
         <Button Content="Задача 11" HorizontalAlignment="Left" Margin="269,122,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_10"/>
+        <Button Content="Задача 13" HorizontalAlignment="Left" Margin="387,35,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_12"/>
 
     </Grid>
 </Window>

@@ -135,5 +135,19 @@ namespace LearnCSharp
             }
             MessageBox.Show("В массиве {" + string.Join(", ", array) + "} " + counter + " неотрицательных элементов", "Результат");
         }
+
+        private void Button_Click_12(object sender, RoutedEventArgs e)
+        {
+            int[] array = Array.ConvertAll(System.IO.File.ReadAllLines(@"Arr.txt"), int.Parse);
+            int counter = 0;
+            foreach (int i in array)
+            {
+                if (!i.Equals(0))
+                {
+                    counter++;
+                }
+            }
+            MessageBox.Show("В массиве {" + string.Join(", ", array) + "} " + counter + " ненулевых элементов", "Результат");
+        }
     }
 }
