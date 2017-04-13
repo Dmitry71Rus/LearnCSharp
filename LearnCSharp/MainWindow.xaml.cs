@@ -41,5 +41,19 @@ namespace LearnCSharp
             }
             MessageBox.Show("Сумма элементов, больших чем 2 элемент массива {" + string.Join(", ", array) + "} равна " + sum, "Результат");
         }
+
+        private void Button_Click_5(object sender, RoutedEventArgs e)
+        {
+            int[] array = Array.ConvertAll(System.IO.File.ReadAllLines(@"Arr.txt"), int.Parse);
+            int counter = 0;
+            foreach (int i in array)
+            {
+                if (i > array[3])
+                {
+                    counter++;
+                }
+            }
+            MessageBox.Show(counter + " элементов больше, чем 4 элемент массива {" + string.Join(", ", array) + "}", "Результат");
+        }
     }
 }
