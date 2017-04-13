@@ -70,5 +70,16 @@ namespace LearnCSharp
             MessageBox.Show("Сумма элементов, меньших чем 21 в массиве {" + string.Join(", ", array) + "} равна " + sum, "Результат");
         }
 
+
+        private void Button_Click_15(object sender, RoutedEventArgs e)
+        {
+            int[] array = Array.ConvertAll(System.IO.File.ReadAllLines(@"Arr.txt"), int.Parse);
+            List<KeyValuePair<int, int>> valueList = new List<KeyValuePair<int, int>>();
+            foreach (int i in array)
+            {
+                valueList.Add(new KeyValuePair<int, int>(i, i));
+            }
+            columnChart.DataContext = valueList;
+        }
     }
 }

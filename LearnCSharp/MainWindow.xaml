@@ -12,5 +12,10 @@
         <Button Content="Задача 3" HorizontalAlignment="Left" Margin="37,122,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_2"/>
         <Button Content="Задача 6" HorizontalAlignment="Left" Margin="151,78,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_5"/>
         <Button Content="Задача 7" HorizontalAlignment="Left" Margin="151,122,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_6"/>
+        <Button Content="Задача 16" HorizontalAlignment="Left" Margin="387,163,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_15"/>
+        <charting:Chart Height="262" HorizontalAlignment="Left" BorderThickness="0"
+                            Margin="37,0,0,14" Name="columnChart" Title="Graph" VerticalAlignment="Bottom" Width="360" LegendTitle="Legend">
+            <charting:ColumnSeries DependentValuePath="Value" IndependentValuePath="Key" ItemsSource="{Binding}" DataContext="{Binding}" Title="Массив" />
+        </charting:Chart>
     </Grid>
 </Window>
