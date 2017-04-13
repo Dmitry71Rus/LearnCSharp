@@ -53,5 +53,19 @@ namespace LearnCSharp
                 MessageBox.Show("Первый элемент массива {" + string.Join(", ", array) + "} не превосходит среднее (" + array.Average() + ") значение элементов этого массива", "Результат");
             }
         }
+
+        private void Button_Click_4(object sender, RoutedEventArgs e)
+        {
+            int[] array = Array.ConvertAll(System.IO.File.ReadAllLines(@"Arr.txt"), int.Parse);
+            int counter = 0;
+            for (int i = 1; i < array.Length; i++)
+            {
+                if (array[i - 1] >= 0 && array[i] < 0 || array[i - 1] < 0 && array[i] >= 0)
+                {
+                    counter++;
+                }
+            }
+            MessageBox.Show("В массиве {" + string.Join(", ", array) + "} " + counter + " раз меняется знак у элементов", "Результат");
+        }
     }
 }
