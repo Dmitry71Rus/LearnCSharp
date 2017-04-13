@@ -28,5 +28,18 @@ namespace LearnCSharp
             }
             MessageBox.Show(counter.ToString() + " элементов массива {" + string.Join(", ", array) + "} больше своих соседей", "Результат");
         }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            int[] array = Array.ConvertAll(System.IO.File.ReadAllLines(@"Arr.txt"), int.Parse);
+            for (int i = 0; i < array.Length; i++)
+            {
+                if (array[i] > 25)
+                {
+                    MessageBox.Show("Номер первого элемента массива {" + string.Join(", ", array) + "} большего 25 равен " + i, "Результат");
+                    return;
+                }
+            }
+        }
     }
 }
