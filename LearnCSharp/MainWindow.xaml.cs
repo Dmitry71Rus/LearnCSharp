@@ -113,5 +113,23 @@ namespace LearnCSharp
             }
             MessageBox.Show("В массиве {" + string.Join(", ", array) + "} " + counter + " элементов меньше 1 элемента и одновременно больше последнего", "Результат");
         }
+
+        private void Button_Click_11(object sender, RoutedEventArgs e)
+        {
+            int[] array = Array.ConvertAll(System.IO.File.ReadAllLines(@"Arr.txt"), int.Parse);
+            int item = array[0];
+            int diff = Math.Abs(Math.Abs(array[0]) - Math.Abs(array[1]));
+            for (int i = 1; i < array.Length; i++)
+            {
+                int tempDiff = Math.Abs(Math.Abs(array[i]) - Math.Abs(array[1]));
+                if (tempDiff <= diff && i != 1)
+                {
+                    diff = tempDiff;
+                    item = array[i];
+                }
+            }
+            MessageBox.Show("В массиве {" + string.Join(", ", array) + "} элемент " + item + " меньше всего отличается от второго", "Результат");
+        }
+
     }
 }
