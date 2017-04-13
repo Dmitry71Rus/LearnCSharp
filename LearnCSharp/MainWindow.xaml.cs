@@ -70,5 +70,20 @@ namespace LearnCSharp
             MessageBox.Show("Сумма элементов, меньших чем 21 в массиве {" + string.Join(", ", array) + "} равна " + sum, "Результат");
         }
 
+
+        private void Button_Click_7(object sender, RoutedEventArgs e)
+        {
+            int[] array = Array.ConvertAll(System.IO.File.ReadAllLines(@"Arr.txt"), int.Parse);
+            int[] arrayCopy = new int[10];
+            Array.Copy(array, arrayCopy, 10);
+            for (int i = 0; i < array.Length; i++)
+            {
+                if ((array[i] % 5).Equals(0))
+                {
+                    array[i]++;
+                }
+            }
+            MessageBox.Show("Исходный массив {" + string.Join(", ", arrayCopy) + "}, массив c увеличенными на 1 элементами, кратными 5 {" + string.Join(", ", array) + "}", "Результат");
+        }
     }
 }
