@@ -99,5 +99,19 @@ namespace LearnCSharp
             }
             MessageBox.Show("Сумма элементов, не кратных 3 в массиве {" + string.Join(", ", array) + "} равна " + sum, "Результат");
         }
+
+        private void Button_Click_9(object sender, RoutedEventArgs e)
+        {
+            int[] array = Array.ConvertAll(System.IO.File.ReadAllLines(@"Arr.txt"), int.Parse);
+            int counter = 0;
+            for (int i = 1; i < array.Length - 1; i++)
+            {
+                if (array[i] < array[0] && array[i] > array[array.Length - 1])
+                {
+                    counter++;
+                }
+            }
+            MessageBox.Show("В массиве {" + string.Join(", ", array) + "} " + counter + " элементов меньше 1 элемента и одновременно больше последнего", "Результат");
+        }
     }
 }
