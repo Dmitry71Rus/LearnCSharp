@@ -41,5 +41,17 @@ namespace LearnCSharp
                 }
             }
         }
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            int[] array = Array.ConvertAll(System.IO.File.ReadAllLines(@"Arr.txt"), int.Parse);
+            if (array[0] > array.Average())
+            {
+                MessageBox.Show("Первый элемент массива {" + string.Join(", ", array) + "} превосходит среднее значение (" + array.Average() + ") элементов этого массива", "Результат");
+            }
+            else
+            {
+                MessageBox.Show("Первый элемент массива {" + string.Join(", ", array) + "} не превосходит среднее (" + array.Average() + ") значение элементов этого массива", "Результат");
+            }
+        }
     }
 }
