@@ -131,5 +131,19 @@ namespace LearnCSharp
             MessageBox.Show("В массиве {" + string.Join(", ", array) + "} элемент " + item + " меньше всего отличается от второго", "Результат");
         }
 
+        private void Button_Click_13(object sender, RoutedEventArgs e)
+        {
+            int[] array = Array.ConvertAll(System.IO.File.ReadAllLines(@"Arr.txt"), int.Parse);
+            int counter = 0;
+            foreach (int i in array)
+            {
+                if ((i % 3).Equals(0))
+                {
+                    counter++;
+                }
+            }
+            MessageBox.Show("В массиве {" + string.Join(", ", array) + "} " + counter + " элементов, кратных 3", "Результат");
+        }
+
     }
 }
